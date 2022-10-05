@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable';
+import SearchBar from './Components/SearchBar/SearchBar';
+import CreateSong from './Components/CreateSong/CreateSong';
 
 function App() {
 
@@ -19,11 +21,15 @@ function App() {
 
   return (
     <div>
+      <div>
+        <SearchBar />
+      </div>
       <div className="main-page_body">
         
           <MusicTable parentSongs={songs} />
       <button onClick={() => getAllSongs()}>Get All Songs</button>
         </div>
+          <CreateSong />
       </div>
   )
 }
