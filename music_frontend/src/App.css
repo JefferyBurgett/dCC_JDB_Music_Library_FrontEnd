@@ -1,0 +1,12 @@
+.border-box {
+    border: solid 1px black;
+    display: block;
+    padding: 1%;
+    max-height: 200px;
+    overflow-y: auto;
+
+}
+
+.container {
+    padding: 1%;
+}

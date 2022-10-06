@@ -38,7 +38,7 @@ const CreateSong = (props) => {
     }
 
         return (
-
+        <div className='container'>
             <form onSubmit={handleSubmit} className='form-grid'>
                 <div className='form-group'>
                     <label>Title</label>
@@ -62,7 +62,7 @@ const CreateSong = (props) => {
                 </div>
                 <button onClick={() => postNewSong()}>Add</button>
             </form>
-
+        </div>
 
         )
 }

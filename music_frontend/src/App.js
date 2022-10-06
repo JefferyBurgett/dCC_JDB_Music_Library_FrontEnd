@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import './App.css';
 import MusicTable from './Components/MusicTable/MusicTable';
 import SearchBar from './Components/SearchBar/SearchBar';
 import CreateSong from './Components/CreateSong/CreateSong';
@@ -31,16 +32,16 @@ function App() {
       <div>
         <SearchBar />
       </div>
-
-      <div className="main-page_body">
-        <MusicTable parentSongs={songs} />
+        <div className="main-page_body">
+          <div className='border-box'>
+            <MusicTable parentSongs={songs} />
+          </div>
+        </div>
+        <div>
+          <CreateSong />
       </div>
-
-      <button onClick={() => getAllSongs()}>Get All Songs</button>
-      <div>
-        <CreateSong />
-      </div>
-   </div>
+            <button onClick={() => getAllSongs()}>Get All Songs</button>
+    </div>
   )
 }
 
