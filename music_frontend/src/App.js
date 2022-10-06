@@ -11,12 +11,20 @@ function App() {
   useEffect(() => {
     getAllSongs();  
   }, []);
-  
+
   async function getAllSongs(){
     const response = await axios.get('http://127.0.0.1:8000/api/music/');
     console.log(response.data);
     setSongs(response.data)
   }
+
+  async function addNewSong() {
+    const response = await axios.post('http://127.0.0.1:8000/api/music/');
+    console.log(response.data)
+    setSongs(response.data)
+  }
+  
+ 
 
 
   return (
@@ -27,10 +35,13 @@ function App() {
       <div className="main-page_body">
         
           <MusicTable parentSongs={songs} />
+          </div>
+
       <button onClick={() => getAllSongs()}>Get All Songs</button>
-        </div>
-          <CreateSong />
+
+          <CreateSong /><button onClick={() => addNewSong()}>Add</button>
       </div>
+      
   )
 }
 
