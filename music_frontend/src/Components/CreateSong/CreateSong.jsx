@@ -1,15 +1,22 @@
 import React, { useState} from 'react';
 import './CreateSong.css'
+import axios from 'axios';
 
 
 const CreateSong = (props) => {
+
+    async function postNewSong(newSong) {      
+        const response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);     
+        console.log(response.data)
+        props.getallSongs();
+    };
 
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
     const [genre, setGenre] = useState('');
     const [release_date, setRelease_Date] = useState('');
-    const [likes, setLikes] = useState(0);
+    // const [likes, setLikes] = useState(0);
 
     
 
@@ -23,10 +30,10 @@ const CreateSong = (props) => {
             album: album,
             genre: genre,
             release_date: release_date,
-            likes: likes
+            // likes: likes
         };
         console.log(newSong);
-        props.addNewSong(newSong);
+        postNewSong(newSong);
 
     }
 
@@ -53,11 +60,7 @@ const CreateSong = (props) => {
                     <label>Release Date</label>
                         <input type='date'className="form-control" value={release_date} onChange={(event) => setRelease_Date((event.target.value))} />
                 </div>
-                <div>
-                    <label>Likes</label>
-                        <input type='int'className="form-control" value={likes} onChange={(event) => setLikes((event.target.value))} />
-                </div>
-                
+                <button onClick={() => postNewSong()}>Add</button>
             </form>
 
 
