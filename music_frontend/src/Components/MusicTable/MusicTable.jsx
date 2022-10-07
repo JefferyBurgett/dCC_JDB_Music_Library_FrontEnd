@@ -1,7 +1,11 @@
+import App from '../../App';
+import axios from "axios";
+
 const MusicTable = (props) => {
+
     return (
         <div className='container'>
-        <table className='table table-bordered'>
+        <table className='table table-bordered table-stripped'>
             <thead>
                 <tr>
                     <th>Title</th>
@@ -10,18 +14,24 @@ const MusicTable = (props) => {
                     <th>Genre</th>
                     <th>Release Date</th>
                     <th>Likes</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-            {props.parentSongs.map((song, index) => {
+            {props.songs.map((entry, index) => {
+              let key = entry.id
             return (
               <tr key={index}>
-                <td>{song.title}</td>
-                <td>{song.artist}</td>
-                <td>{song.album}</td>
-                <td>{song.genre}</td>
-                <td>{song.release_date}</td>
-                <td>{song.likes}</td>
+              
+                <td>{entry.title}</td>
+                <td>{entry.artist}</td>
+                <td>{entry.album}</td>
+                <td>{entry.genre}</td>
+                <td>{entry.release_date}</td>
+                <td>{entry.likes}</td>
+                <td><button>Update</button></td>
+                <td><button onClick={() => props.deleteSong(entry.id)}>Delete</button></td>
+                <td><button>Like</button></td>
               </tr>
             )
           })}
