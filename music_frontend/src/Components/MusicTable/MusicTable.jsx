@@ -31,7 +31,7 @@ const MusicTable = (props) => {
                 <td>{entry.likes}</td>
                 <td><button>Update</button></td>
                 <td><button onClick={() => props.deleteSong(entry.id)}>Delete</button></td>
-                <td><button>Like</button></td>
+                <td><button onClick={() => props.likeSong(entry.id)}>Like</button></td>
               </tr>
             )
           })}

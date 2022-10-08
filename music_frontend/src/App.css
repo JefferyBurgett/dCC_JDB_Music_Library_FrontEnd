@@ -10,3 +10,14 @@
 .container {
     padding: 1%;
 }
+
+.tablesection {
+    background-color: grey;
+}
+
+.table {
+    background-color: white;
+    text-align: center;
+    border: solid 1px black;
+    margin: auto;
+}
