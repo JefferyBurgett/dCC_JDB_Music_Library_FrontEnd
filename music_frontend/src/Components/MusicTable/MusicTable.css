@@ -1,5 +1,19 @@
-/* .table {
-    border: solid 1px black;
+.table-section {
+    background-color: grey;
+  
+}
+
+.table-container {  
+    max-width: 100%;
     margin: auto;
-    
-} */
+    height: 400px;
+    overflow: auto;
+    background-color: darkgray;
+
+}
+
+.table {
+    background-color: white;
+    margin-top: 2%;
+    max-width: 80%;
+}

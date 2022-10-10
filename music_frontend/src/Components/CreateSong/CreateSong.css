@@ -1,0 +1,30 @@
+.create-section {
+    background-color: lightgray;
+}
+.createContainer {
+    display:inline;
+    margin: auto;  
+    background-color: lightgray;
+    text-align: center;
+    height: 100vh;
+}
+
+.h5 {
+    text-align: center;
+    margin: auto;
+}
+
+.createForm {
+    max-width: 100%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 1%;
+    background-color: white;
+    text-align: left;
+    /* height: 100vh; */
+
+}
+
+.col {
+    align-content: center;
+}

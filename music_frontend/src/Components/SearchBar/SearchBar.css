@@ -1,0 +1,27 @@
+.search-bar {
+    background-color: lightgray;
+    
+}
+
+.search-container {
+    max-width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+    background-color: lightgray;
+}
+
+.h2 {
+    max-width: 60%;
+    margin: auto; 
+}
+
+.form-select {
+    max-width: 70%;
+    margin: auto;
+    padding: 2%;
+}
+
+.filterbutton {
+    max-width: 20%;
+}

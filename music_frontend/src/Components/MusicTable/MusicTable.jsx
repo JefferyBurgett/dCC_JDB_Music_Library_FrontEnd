@@ -1,10 +1,10 @@
-import App from '../../App';
-import axios from "axios";
+import React from 'react'
+import "./MusicTable.css";
+
 
 const MusicTable = (props) => {
-
-    return (
-        <div className='container'>
+  return (
+    <div className='table-container'>
         <table className='table table-bordered table-stripped'>
             <thead>
                 <tr>
@@ -21,8 +21,7 @@ const MusicTable = (props) => {
             {props.songs.map((entry, index) => {
               let key = entry.id
             return (
-              <tr key={index}>
-              
+              <tr key={index}>              
                 <td>{entry.title}</td>
                 <td>{entry.artist}</td>
                 <td>{entry.album}</td>
@@ -33,13 +32,13 @@ const MusicTable = (props) => {
                 <td><button onClick={() => props.deleteSong(entry.id)}>Delete</button></td>
                 <td><button onClick={() => props.likeSong(entry.id)}>Like</button></td>
               </tr>
-            )
-          })}
+            ) 
+             })}            
+                        
         </tbody>
       </table>
       </div>
      );
 }
- 
+
 export default MusicTable;
-        
