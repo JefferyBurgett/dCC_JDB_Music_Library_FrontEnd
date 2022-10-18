@@ -4,6 +4,7 @@ import "./App.css";
 import MusicTable from "./Components/MusicTable/MusicTable";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import CreateSong from "./Components/CreateSong/CreateSong";
+import Modal from "./Components/Modal/Modal";
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -18,7 +19,7 @@ function App() {
     setSongs(response.data);
   }
 
-  async function filterSongs(category, filterData) {
+function filterSongs(category, filterData) {
     let response = songs.filter((song) =>{
       if (song[category].includes(filterData)) {
         return true;
@@ -44,8 +45,11 @@ function App() {
       <SearchBar filterSongs={filterSongs} songs={songs} />
       <MusicTable songs={songs} deleteSong={deleteSong} likeSong={likeSong} />
       <CreateSong />
-      <br></br>
-      <div className="container mt-3">
+      
+      <br></br>           
+      
+    
+        <div className="container mt-3">
         <h3>Modal Example</h3>
         <p>Click on the button to open the modal.</p>
 
@@ -63,7 +67,7 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h4 className="modal-title">Modal Heading</h4>
+              <h4 className="modal-title">Update Song</h4>
               <button
                 type="button"
                 className="btn-close"
@@ -71,22 +75,13 @@ function App() {
               ></button>
             </div>
 
-            <div className="modal-body"></div>
-
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-danger"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
+            <div className="modal-body">
+           </div>
           </div>
-        </div>
-      </div>
+          </div>
+          </div>
     </div>
   );
-}
+};
 
 export default App;
