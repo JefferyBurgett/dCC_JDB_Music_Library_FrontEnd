@@ -1,20 +1,16 @@
 import React from 'react'
-import { useState } from 'react';
-import Modal from '../Modal/Modal'
+import UpdateModal from '../Modal/Modal';
+
+
+
 import "./MusicTable.css";
 
 
 const MusicTable = (props) => {
 
-  const [displayModal, setDisplayModal] = useState(false)
-
-  function openModal() {
-      setDisplayModal(true)
-     }
-
-  function closeModal() {
-    setDisplayModal(false)
-  }
+  
+ 
+  
 
 
   return (
@@ -32,17 +28,18 @@ const MusicTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-            {props.songs.map((entry, index) => {
-              let key = entry.id
+            {props.songs.map((entry) => {
+              
             return (
-              <tr key={index}>              
+              <tr key={entry.id}>              
                 <td>{entry.title}</td>
                 <td>{entry.artist}</td>
                 <td>{entry.album}</td>
                 <td>{entry.genre}</td>
                 <td>{entry.release_date}</td>
                 <td>{entry.likes}</td>
-                <td><button onClick={() => openModal} >Update</button></td>
+                {/* <td><button onClick={() => props.openModal(entry.id)} >Update</button></td> */}
+                <UpdateModal entry={entry} getAllSongs={props.getAllSongs}/>
                 <td><button onClick={() => props.deleteSong(entry.id)}>Delete</button></td>
                 <td><button onClick={() => props.likeSong(entry.id)}>Like</button></td>
               </tr>
